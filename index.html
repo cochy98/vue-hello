@@ -22,8 +22,36 @@
 </head>
 <body>
     <main id="app" class="container py-5">
-        <h1 class="text-center">Benvenuto in Vue!</h1>
-        <input type="text" v-model="message">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">La mia prima pagina dinamica con Vue!</h1>
+            </div>
+        </div>
+
+        <div class="row py-5">
+            <div class="col-4">
+                <label for="input" class="form-label">Input:</label>
+                <input class="form-control" id="input" type="text" v-model="message">
+            </div>
+            <div class="col-8">
+                <label for="output" class="form-label">Output:</label>
+                <div class="alert alert-secondary" role="alert">
+                    <h1 class="fs-4" id="output">{{ message }}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="fs-4"><span>Questo è un titolo dinamico con Vue: </span>{{ outputText }}</h1>
+            </div>
+            <div class="col-4 text-center py-5">
+                <img v-bind:src="image.source" v-bind:alt="image.name" class="img-fluid">
+            </div>
+            <div class="col-8 py-5 align-self-end">
+                <p class="fs-5">L'immagine sulla sinistra è stata inserita dinamicamente con Vue.</p>
+            </div>
+        </div>
     </main>
 
     <script type="text/javascript" src="js/main.js"></script>
